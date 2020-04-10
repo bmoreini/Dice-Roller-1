@@ -21,9 +21,17 @@ function rollDice(){
 }
 
 function eachRoll(faces){
+  if (faces == 12) show12Dice(12);
+  else showDice();
   showDice();
   roll = Math.floor(Math.random()*+faces)+1;
   return roll;
+}
+
+function show12Dice(){
+  diceBox.style.backgroundImage="url('12-sided.gif')";
+  showResult.classList.remove("showme");
+ //showResult.className += "hideme";
 }
 
 function showDice(){
