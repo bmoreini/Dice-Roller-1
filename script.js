@@ -12,7 +12,8 @@ function rollDice(){
   let result = 0;
   diceBox.style.backgroundSize = "100px 100px";
   for ( let die =0; die<dice; die++){
-    showDice();
+    if (faces == 12) show12Dice();
+    else showDice();
     result+=(eachRoll(faces)); 
     setTimeout(hideDice,3000);
   }
@@ -21,9 +22,6 @@ function rollDice(){
 }
 
 function eachRoll(faces){
-  if (faces == 12) show12Dice(12);
-  else showDice();
-  showDice();
   roll = Math.floor(Math.random()*+faces)+1;
   return roll;
 }
