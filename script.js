@@ -1,6 +1,5 @@
 // Code for madlibs.js
 var sides = document.getElementById("sides");
-var rollResult = document.getElementById("showResult");
 var dNum = document.getElementById("dNum");
 var showResult = document.getElementById("showResult");
 var diceBox = document.getElementById("diceBox");
@@ -17,7 +16,7 @@ function rollDice(){
     result+=(eachRoll(faces)); 
     setTimeout(hideDice,3000);
   }
-  rollResult.innerHTML = result;
+  showResult.innerHTML = result;
   console.log(result);
 }
 
@@ -29,17 +28,17 @@ function eachRoll(faces){
 function show12Dice(){
   diceBox.style.backgroundImage="url('12-sided.gif')";
   showResult.classList.remove("showme");
- //showResult.className += "hideme";
+  showResult.classList.add("hideme");
 }
 
 function showDice(){
   diceBox.style.backgroundImage="url('dice.gif')";
   showResult.classList.remove("showme");
- //showResult.className += "hideme";
+  showResult.classList.add("hideme");
 }
 
 function hideDice(){
   diceBox.style.backgroundImage="url('spacer.png')";
-  showResult.className += "showme";
-  //showResult.classList.remove("hideme");
+  showResult.classList.add("showme");
+  showResult.classList.remove("hideme");
 }
